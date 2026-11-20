@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapping Electricity Access</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="viz-root">
+    <header class="page-header">
+      <h1>Mapping Electricity Access Around the World</h1>
+      <p class="lede">
+        Which countries had the least access to electricity in 2019, and how did access
+        change from 2000 to 2019? Data: World Bank, share of the population with access to electricity.
+      </p>
+      <p class="byline">Juan Mo, Nick Puckdee, Snigdha Tiwari, and Anuradha Jaganathan</p>
+    </header>
+
+    <!--
+      One <section> per figure. Each figure keeps its code in js/figureN.js and
+      prefixes its element IDs with figN- so figures don't collide.
+    -->
+
+    <section id="figure-1" class="figure">
+      <p class="eyebrow">Figure 1</p>
+      <h2>Electricity access around the world in 2000</h2>
+      <div id="fig1-chart" class="placeholder">In progress</div>
+    </section>
+
+    <section id="figure-2" class="figure">
+      <p class="eyebrow">Figure 2</p>
+      <h2>Electricity access around the world in 2019</h2>
+      <div id="fig2-chart" class="placeholder">In progress</div>
+    </section>
+
+    <section id="figure-3" class="figure">
+      <p class="eyebrow">Figure 3</p>
+      <h2>Ten countries with the lowest electricity access in 2019</h2>
+      <div id="fig3-chart" class="placeholder">In progress</div>
+    </section>
+
+    <section id="figure-4" class="figure">
+      <p class="eyebrow">Figure 4</p>
+      <h2>Ten countries with the largest improvements, 2000–2019</h2>
+      <div id="fig4-chart" class="placeholder">In progress</div>
+    </section>
+
+    <section id="figure-5" class="figure">
+      <p class="eyebrow">Figure 5</p>
+      <h2>Electricity access over time in selected countries</h2>
+      <p class="lede">
+        Share of the population with access to electricity, 2000–2019. Add or remove
+        countries to compare them, and hover over the chart to read exact values.
+      </p>
+
+      <div class="controls">
+        <label class="search">
+          <span class="visually-hidden">Add a country</span>
+          <input id="fig5-country-input" list="fig5-country-list" placeholder="Add a country…" autocomplete="off">
+          <datalist id="fig5-country-list"></datalist>
+        </label>
+        <button id="fig5-add" type="button">Add</button>
+        <label class="toggle">
+          <input id="fig5-world" type="checkbox" checked>
+          World average
+        </label>
+        <button id="fig5-reset" type="button" class="ghost">Reset</button>
+        <span id="fig5-status" class="status" role="status"></span>
+      </div>
+
+      <ul id="fig5-legend" class="legend" aria-label="Selected countries"></ul>
+
+      <figure class="chart-card">
+        <div id="fig5-chart"></div>
+        <div id="fig5-tooltip" class="tooltip" hidden></div>
+        <figcaption>
+          Source: World Bank, World Development Indicators (EG.ELC.ACCS.ZS), via
+          light-and-salt/World-Bank-Data-by-Indicators. Gaps in a line mean no data for those years.
+        </figcaption>
+      </figure>
+
+      <div class="notes">
+        <h3>What to notice</h3>
+        <p>
+          Cambodia rose from about 17% to 93%, the largest gain of any country (+76 points).
+          Kenya and Bangladesh also gained more than 50 points. Chad was still below 10% in 2019
+          and gained less than 6 points in twenty years. Over the same period the world
+          average went from 78% to 90%.
+        </p>
+      </div>
+
+      <details class="table-view">
+        <summary>Show data table</summary>
+        <table>
+          <thead>
+            <tr><th scope="col">Country</th><th scope="col">2000</th><th scope="col">2010</th><th scope="col">2019</th><th scope="col">Change (pts)</th></tr>
+          </thead>
+          <tbody id="fig5-table-body"></tbody>
+        </table>
+      </details>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="js/figure5.js"></script>
+</body>
+</html>
